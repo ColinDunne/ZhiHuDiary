@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		D00F25F81AD64FCD00E959BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D00F25F71AD64FCD00E959BF /* main.m */; };
 		D00F25FB1AD64FCD00E959BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D00F25FA1AD64FCD00E959BF /* AppDelegate.m */; };
-		D00F25FE1AD64FCD00E959BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D00F25FD1AD64FCD00E959BF /* ViewController.m */; };
 		D00F26011AD64FCD00E959BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00F25FF1AD64FCD00E959BF /* Main.storyboard */; };
 		D00F26031AD64FCD00E959BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00F26021AD64FCD00E959BF /* Images.xcassets */; };
 		D00F26061AD64FCD00E959BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00F26041AD64FCD00E959BF /* LaunchScreen.xib */; };
 		D00F26121AD64FCD00E959BF /* ZhiHuDiaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D00F26111AD64FCD00E959BF /* ZhiHuDiaryTests.m */; };
+		D00F26201AD669B100E959BF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D00F261F1AD669B100E959BF /* HomeViewController.m */; };
+		D00F26251AD66F9600E959BF /* HeaderScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00F26241AD66F9600E959BF /* HeaderScrollView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,15 @@
 		D00F25F71AD64FCD00E959BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D00F25F91AD64FCD00E959BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D00F25FA1AD64FCD00E959BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D00F25FC1AD64FCD00E959BF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D00F25FD1AD64FCD00E959BF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D00F26001AD64FCD00E959BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D00F26021AD64FCD00E959BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D00F26051AD64FCD00E959BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D00F260B1AD64FCD00E959BF /* ZhiHuDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhiHuDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00F26101AD64FCD00E959BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D00F26111AD64FCD00E959BF /* ZhiHuDiaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhiHuDiaryTests.m; sourceTree = "<group>"; };
+		D00F261E1AD669B100E959BF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Controller/HomeViewController.h; sourceTree = "<group>"; };
+		D00F261F1AD669B100E959BF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controller/HomeViewController.m; sourceTree = "<group>"; };
+		D00F26241AD66F9600E959BF /* HeaderScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderScrollView.xib; path = Resource/HeaderScrollView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +83,12 @@
 		D00F25F41AD64FCD00E959BF /* ZhiHuDiary */ = {
 			isa = PBXGroup;
 			children = (
+				D00F261B1AD6697600E959BF /* Model */,
+				D00F261C1AD6697E00E959BF /* View */,
+				D00F261D1AD6698600E959BF /* Controller */,
+				D00F26211AD66E7D00E959BF /* Resource */,
 				D00F25F91AD64FCD00E959BF /* AppDelegate.h */,
 				D00F25FA1AD64FCD00E959BF /* AppDelegate.m */,
-				D00F25FC1AD64FCD00E959BF /* ViewController.h */,
-				D00F25FD1AD64FCD00E959BF /* ViewController.m */,
 				D00F25FF1AD64FCD00E959BF /* Main.storyboard */,
 				D00F26021AD64FCD00E959BF /* Images.xcassets */,
 				D00F26041AD64FCD00E959BF /* LaunchScreen.xib */,
@@ -117,6 +121,37 @@
 				D00F26101AD64FCD00E959BF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D00F261B1AD6697600E959BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D00F261C1AD6697E00E959BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D00F261D1AD6698600E959BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D00F261E1AD669B100E959BF /* HomeViewController.h */,
+				D00F261F1AD669B100E959BF /* HomeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D00F26211AD66E7D00E959BF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D00F26241AD66F9600E959BF /* HeaderScrollView.xib */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00F26251AD66F9600E959BF /* HeaderScrollView.xib in Resources */,
 				D00F26011AD64FCD00E959BF /* Main.storyboard in Resources */,
 				D00F26061AD64FCD00E959BF /* LaunchScreen.xib in Resources */,
 				D00F26031AD64FCD00E959BF /* Images.xcassets in Resources */,
@@ -219,9 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D00F25FE1AD64FCD00E959BF /* ViewController.m in Sources */,
 				D00F25FB1AD64FCD00E959BF /* AppDelegate.m in Sources */,
 				D00F25F81AD64FCD00E959BF /* main.m in Sources */,
+				D00F26201AD669B100E959BF /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
