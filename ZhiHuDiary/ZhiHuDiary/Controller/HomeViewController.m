@@ -7,12 +7,15 @@
 //
 
 #import "HomeViewController.h"
+#import "DataManager.h"
 #import "Article.h"
+#import "HomeHeaderView.h"
 
 @interface HomeViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UIScrollView *headerView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UITableView *articleTableView;
+@property (nonatomic, strong) NSArray *articles;
 @end
 
 @implementation HomeViewController
@@ -27,8 +30,6 @@
    
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.pageControl];
-    
-    self.articleTableView.frame = CGRectMake(0, kIMAGEHEIGHT, kIMAGEWIDTH, kTABLEHEIGHT);
     [self.view addSubview:self.articleTableView];
 }
 
@@ -49,7 +50,38 @@
 
 #pragma mark - UITableViewDataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.articles count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.articles[section] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *identifier = @"article";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    Article *article = self.articles[indexPath.section][indexPath.row];
+    cell.textLabel.text = article.name;
+
+    return cell;
+}
+
 #pragma mark - UITableViewDelegate
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    HomeHeaderView *headerView = [HomeHeaderView headerViewWithTableView:tableView];
+    
+    Article *article = self.articles[section][0];
+    headerView.title = article.section;
+    
+    return headerView;
+}
 
 #pragma mark - Getter & Setter
 
@@ -107,9 +139,23 @@
         _articleTableView = [[NSBundle mainBundle] loadNibNamed:@"HomeView" owner:self options:nil][1];
         _articleTableView.dataSource = self;
         _articleTableView.delegate = self;
+        
+        _articleTableView.frame = CGRectMake(0, kIMAGEHEIGHT, kIMAGEWIDTH, kTABLEHEIGHT);
+        
+        _articleTableView.sectionHeaderHeight = 30;
+        
     }
     
     return _articleTableView;
+}
+
+- (NSArray *)articles {
+    if (!_articles) {
+        DataManager *dataManager = [DataManager dataManagerWithFile:@"Article"];
+        _articles = [dataManager sortedDataArray];
+    }
+    
+    return _articles;
 }
 
 @end

@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *cate;
 @property (nonatomic, strong) NSDate *date;
+@property (nonatomic, copy) NSString *section;
 @property (nonatomic, copy) NSString *url;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;

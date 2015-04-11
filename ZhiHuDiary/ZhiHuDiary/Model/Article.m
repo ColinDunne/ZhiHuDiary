@@ -16,6 +16,7 @@
         self.icon = dict[@"icon"];
         self.cate = dict[@"cate"];
         self.date = dict[@"date"];
+        self.section = dict[@"section"];
         self.url = dict[@"url"];
     }
     

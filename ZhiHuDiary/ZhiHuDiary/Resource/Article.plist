@@ -13,6 +13,8 @@
 		<date>2015-04-11T05:49:20Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4654013?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
+		<key>section</key>
+		<string>2015年04月11日</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -25,6 +27,8 @@
 		<date>2015-04-11T05:51:49Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4642267?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
+		<key>section</key>
+		<string>2015年04月11日</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -37,6 +41,8 @@
 		<date>2015-04-11T05:51:56Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4654654?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
+		<key>section</key>
+		<string>2015年04月11日</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -49,6 +55,8 @@
 		<date>2015-04-11T05:52:06Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4657557?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
+		<key>section</key>
+		<string>2015年04月11日</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -61,6 +69,8 @@
 		<date>2015-04-11T06:10:33Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4653807?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
+		<key>section</key>
+		<string>2015年04月11日</string>
 	</dict>
 </array>
 </plist>
