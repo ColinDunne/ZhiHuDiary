@@ -36,12 +36,12 @@
         return nil;
     }
     
-    // 排序
-    NSArray *sortedArray = [self.dataArray sortedArrayUsingComparator:^NSComparisonResult(Article *obj1, Article *obj2) {
+    // 倒序排列，新的文章放在前面
+    self.dataArray = [self.dataArray sortedArrayUsingComparator:^NSComparisonResult(Article *obj1, Article *obj2) {
         if ([obj1.date compare:obj2.date]) {
-            return NSOrderedAscending;
-        } else {
             return NSOrderedDescending;
+        } else {
+            return NSOrderedAscending;
         }
     }];
     
@@ -49,7 +49,7 @@
     NSString *key = nil;
     NSMutableArray *valueArray = nil;
     NSMutableDictionary *dataDict = [[NSMutableDictionary alloc] init];
-    for (Article *article in sortedArray) {
+    for (Article *article in self.dataArray) {
         key = article.section;
         valueArray = dataDict[key];
         
@@ -63,10 +63,22 @@
     }
     
     // 由NSDictionary转成NSArray
+    NSArray *unsortedArray = nil;
+    NSArray *sortedArray = nil;
     NSMutableArray *sortedDataArray = [[NSMutableArray alloc] init];
     for (NSString *key in dataDict.keyEnumerator) {
         valueArray = dataDict[key];
-        [sortedDataArray addObject:[valueArray copy]];
+        // 对value中的数组进行排序
+        unsortedArray = [valueArray copy];
+        sortedArray = [unsortedArray sortedArrayUsingComparator:^NSComparisonResult(Article *obj1, Article *obj2) {
+            if ([obj1.date compare:obj2.date]) {
+                return NSOrderedDescending;
+            } else {
+                return NSOrderedAscending;
+            }
+        }];
+        
+        [sortedDataArray addObject:sortedArray];
     }
     
     return [sortedDataArray copy];

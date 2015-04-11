@@ -10,7 +10,7 @@
 		<key>cate</key>
 		<string></string>
 		<key>date</key>
-		<date>2015-04-11T05:49:20Z</date>
+		<date>2015-04-11T06:04:00Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4654013?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
 		<key>section</key>
@@ -24,7 +24,7 @@
 		<key>cate</key>
 		<string></string>
 		<key>date</key>
-		<date>2015-04-11T05:51:49Z</date>
+		<date>2015-04-11T06:03:00Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4642267?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
 		<key>section</key>
@@ -38,7 +38,7 @@
 		<key>cate</key>
 		<string>用户推荐日报</string>
 		<key>date</key>
-		<date>2015-04-11T05:51:56Z</date>
+		<date>2015-04-11T06:02:00Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4654654?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
 		<key>section</key>
@@ -52,7 +52,7 @@
 		<key>cate</key>
 		<string></string>
 		<key>date</key>
-		<date>2015-04-11T05:52:06Z</date>
+		<date>2015-04-11T06:01:00Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4657557?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
 		<key>section</key>
@@ -66,11 +66,39 @@
 		<key>cate</key>
 		<string></string>
 		<key>date</key>
-		<date>2015-04-11T06:10:33Z</date>
+		<date>2015-04-11T06:00:00Z</date>
 		<key>url</key>
 		<string>http://daily.zhihu.com/story/4653807?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
 		<key>section</key>
 		<string>2015年04月11日</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>有哪些精简而震撼人心的话剧剧本</string>
+		<key>icon</key>
+		<string>icon005</string>
+		<key>cate</key>
+		<string></string>
+		<key>date</key>
+		<date>2015-04-10T13:55:13Z</date>
+		<key>url</key>
+		<string>http://daily.zhihu.com/story/4657551?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
+		<key>section</key>
+		<string>2015年04月10日</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>长期在“海上漂”的生活是怎样的体验？</string>
+		<key>icon</key>
+		<string></string>
+		<key>cate</key>
+		<string>用户推荐日报</string>
+		<key>date</key>
+		<date>2015-04-10T05:00:13Z</date>
+		<key>url</key>
+		<string>http://daily.zhihu.com/story/4655179?utm_campaign=in_app_share&amp;utm_medium=iOS&amp;utm_source=copy</string>
+		<key>section</key>
+		<string>2015年04月10日</string>
 	</dict>
 </array>
 </plist>
