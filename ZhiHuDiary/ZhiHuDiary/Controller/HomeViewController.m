@@ -45,7 +45,7 @@
 
 - (UIScrollView *)headerView {
     if (!_headerView) {
-        _headerView = [[NSBundle mainBundle] loadNibNamed:@"HeaderScrollView" owner:self options:nil][0];
+        _headerView = [[NSBundle mainBundle] loadNibNamed:@"HomeView" owner:self options:nil][0];
         
         // 设置位置大小
         _headerView.frame = CGRectMake(0, 0, kIMAGEWIDTH, kIMAGEHEIGHT);

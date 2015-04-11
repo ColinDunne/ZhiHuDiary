@@ -14,7 +14,7 @@
 		D00F26061AD64FCD00E959BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00F26041AD64FCD00E959BF /* LaunchScreen.xib */; };
 		D00F26121AD64FCD00E959BF /* ZhiHuDiaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D00F26111AD64FCD00E959BF /* ZhiHuDiaryTests.m */; };
 		D00F26201AD669B100E959BF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D00F261F1AD669B100E959BF /* HomeViewController.m */; };
-		D00F26251AD66F9600E959BF /* HeaderScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00F26241AD66F9600E959BF /* HeaderScrollView.xib */; };
+		D00F26251AD66F9600E959BF /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00F26241AD66F9600E959BF /* HomeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 		D00F26111AD64FCD00E959BF /* ZhiHuDiaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhiHuDiaryTests.m; sourceTree = "<group>"; };
 		D00F261E1AD669B100E959BF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Controller/HomeViewController.h; sourceTree = "<group>"; };
 		D00F261F1AD669B100E959BF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controller/HomeViewController.m; sourceTree = "<group>"; };
-		D00F26241AD66F9600E959BF /* HeaderScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderScrollView.xib; path = Resource/HeaderScrollView.xib; sourceTree = "<group>"; };
+		D00F26241AD66F9600E959BF /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeView.xib; path = Resource/HomeView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 		D00F26211AD66E7D00E959BF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D00F26241AD66F9600E959BF /* HeaderScrollView.xib */,
+				D00F26241AD66F9600E959BF /* HomeView.xib */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D00F26251AD66F9600E959BF /* HeaderScrollView.xib in Resources */,
+				D00F26251AD66F9600E959BF /* HomeView.xib in Resources */,
 				D00F26011AD64FCD00E959BF /* Main.storyboard in Resources */,
 				D00F26061AD64FCD00E959BF /* LaunchScreen.xib in Resources */,
 				D00F26031AD64FCD00E959BF /* Images.xcassets in Resources */,
@@ -448,6 +448,7 @@
 				D00F26171AD64FCD00E959BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D00F26181AD64FCD00E959BF /* Build configuration list for PBXNativeTarget "ZhiHuDiaryTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +457,7 @@
 				D00F261A1AD64FCD00E959BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
