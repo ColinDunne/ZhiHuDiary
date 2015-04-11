@@ -7,16 +7,19 @@
 //
 
 #import "HomeViewController.h"
+#import "Article.h"
 
-@interface HomeViewController () <UIScrollViewDelegate>
+@interface HomeViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UIScrollView *headerView;
 @property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) UITableView *articleTableView;
 @end
 
 @implementation HomeViewController
 
 #define kIMAGEWIDTH 375
 #define kIMAGEHEIGHT 180
+#define kTABLEHEIGHT 487
 #define kIMAGECOUNT 6
 
 - (void)viewDidLoad {
@@ -24,6 +27,9 @@
    
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.pageControl];
+    
+    self.articleTableView.frame = CGRectMake(0, kIMAGEHEIGHT, kIMAGEWIDTH, kTABLEHEIGHT);
+    [self.view addSubview:self.articleTableView];
 }
 
 
@@ -41,11 +47,17 @@
     
 }
 
+#pragma mark - UITableViewDataSource
+
+#pragma mark - UITableViewDelegate
+
 #pragma mark - Getter & Setter
 
 - (UIScrollView *)headerView {
     if (!_headerView) {
         _headerView = [[NSBundle mainBundle] loadNibNamed:@"HomeView" owner:self options:nil][0];
+        // 设置代理
+        _headerView.delegate = self;
         
         // 设置位置大小
         _headerView.frame = CGRectMake(0, 0, kIMAGEWIDTH, kIMAGEHEIGHT);
@@ -72,9 +84,6 @@
         
         // 支持分页
         _headerView.pagingEnabled = YES;
-        
-        // 设置代理
-        _headerView.delegate = self;
     }
     
     return _headerView;
@@ -91,6 +100,16 @@
     }
     
     return _pageControl;
+}
+
+- (UITableView *)articleTableView {
+    if (!_articleTableView) {
+        _articleTableView = [[NSBundle mainBundle] loadNibNamed:@"HomeView" owner:self options:nil][1];
+        _articleTableView.dataSource = self;
+        _articleTableView.delegate = self;
+    }
+    
+    return _articleTableView;
 }
 
 @end
