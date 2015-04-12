@@ -18,4 +18,6 @@
 
 - (NSArray *)sortedDataArray;
 
++ (NSArray *)cateArray;
+
 @end

@@ -17,6 +17,7 @@
 		D00F26251AD66F9600E959BF /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00F26241AD66F9600E959BF /* HomeView.xib */; };
 		D08F9AE51AD8E9EF002359B5 /* Article.plist in Resources */ = {isa = PBXBuildFile; fileRef = D08F9AE41AD8E9EF002359B5 /* Article.plist */; };
 		D08F9AE81AD8F306002359B5 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D08F9AE71AD8F306002359B5 /* Article.m */; };
+		D0D51E3D1ADA54200014F7A9 /* ColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D51E3C1ADA54200014F7A9 /* ColumnView.m */; };
 		D0E96B4B1AD906D3007DC0B5 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E96B4A1AD906D3007DC0B5 /* DataManager.m */; };
 		D0E96B4E1AD94FCF007DC0B5 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E96B4D1AD94FCF007DC0B5 /* HomeHeaderView.m */; };
 		D0E96B511AD964EA007DC0B5 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E96B501AD964EA007DC0B5 /* HomeTableViewCell.m */; };
@@ -50,6 +51,8 @@
 		D08F9AE41AD8E9EF002359B5 /* Article.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Article.plist; path = Resource/Article.plist; sourceTree = "<group>"; };
 		D08F9AE61AD8F306002359B5 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Article.h; path = Model/Article.h; sourceTree = "<group>"; };
 		D08F9AE71AD8F306002359B5 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Article.m; path = Model/Article.m; sourceTree = "<group>"; };
+		D0D51E3B1ADA54200014F7A9 /* ColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColumnView.h; path = View/ColumnView.h; sourceTree = "<group>"; };
+		D0D51E3C1ADA54200014F7A9 /* ColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColumnView.m; path = View/ColumnView.m; sourceTree = "<group>"; };
 		D0E96B491AD906D3007DC0B5 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Model/DataManager.h; sourceTree = "<group>"; };
 		D0E96B4A1AD906D3007DC0B5 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Model/DataManager.m; sourceTree = "<group>"; };
 		D0E96B4C1AD94FCF007DC0B5 /* HomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeHeaderView.h; path = View/HomeHeaderView.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				D0E96B4D1AD94FCF007DC0B5 /* HomeHeaderView.m */,
 				D0E96B4F1AD964EA007DC0B5 /* HomeTableViewCell.h */,
 				D0E96B501AD964EA007DC0B5 /* HomeTableViewCell.m */,
+				D0D51E3B1ADA54200014F7A9 /* ColumnView.h */,
+				D0D51E3C1ADA54200014F7A9 /* ColumnView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D51E3D1ADA54200014F7A9 /* ColumnView.m in Sources */,
 				D08F9AE81AD8F306002359B5 /* Article.m in Sources */,
 				D0E96B4B1AD906D3007DC0B5 /* DataManager.m in Sources */,
 				D0E96B4E1AD94FCF007DC0B5 /* HomeHeaderView.m in Sources */,

@@ -11,12 +11,19 @@
 #import "Article.h"
 #import "HomeHeaderView.h"
 #import "HomeTableViewCell.h"
+#import "ColumnView.h"
 
-@interface HomeViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface HomeViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIScrollView *headerView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UITableView *articleTableView;
+@property (nonatomic, strong) ColumnView *columnView;
+
+@property (nonatomic) BOOL isColumnVisible;
+
 @property (nonatomic, strong) NSArray *articles;
+@property (nonatomic, strong) NSArray *cateArray;
+
 @end
 
 @implementation HomeViewController
@@ -25,6 +32,7 @@
 #define kIMAGEHEIGHT 180
 #define kTABLEHEIGHT 487
 #define kIMAGECOUNT 6
+#define kCOLUMNWIDTH 215
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,21 +40,18 @@
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.pageControl];
     [self.view addSubview:self.articleTableView];
-}
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.view addSubview:self.columnView];
 }
 
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    int page = scrollView.contentOffset.x / kIMAGEWIDTH;
-    self.pageControl.currentPage = page;
     
+    // 如果不知UITableView的话，正常滑动图片，切换pageControl
+    if (![scrollView isMemberOfClass:[UITableView class]]) {
+        int page = scrollView.contentOffset.x / kIMAGEWIDTH;
+        self.pageControl.currentPage = page;
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -80,6 +85,24 @@
     headerView.title = article.section;
     
     return headerView;
+}
+
+#pragma mark - 手势识别
+
+- (void)swipeAction:(UISwipeGestureRecognizer *)swipe {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight && !self.isColumnVisible) {
+        // 所有子控件向右平移
+        for (UIView *view in self.view.subviews) {
+            view.transform = CGAffineTransformMakeTranslation(kCOLUMNWIDTH, 0);
+        }
+        self.isColumnVisible = !self.isColumnVisible;
+    } else if (swipe.direction == UISwipeGestureRecognizerDirectionLeft && self.isColumnVisible) {
+        // 所有子控件恢复原来的位置
+        for (UIView *view in self.view.subviews) {
+            view.transform = CGAffineTransformMakeTranslation(0, 0);
+        }
+        self.isColumnVisible = !self.isColumnVisible;
+    }
 }
 
 #pragma mark - Getter & Setter
@@ -145,9 +168,38 @@
         
         _articleTableView.rowHeight = [HomeTableViewCell CellHeight];
         
+        //给UITableView注册横向扫动手势
+        UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+        // 设置手势触发方向
+        swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+        [_articleTableView addGestureRecognizer:swipeRight];
+        
+        //给UITableView注册横向扫动手势
+        UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+        // 设置手势触发方向
+        swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+        [_articleTableView addGestureRecognizer:swipeLeft];
+        
     }
     
     return _articleTableView;
+}
+
+- (ColumnView *)columnView {
+    if (!_columnView) {
+        _columnView = [ColumnView columnViewFromNib];
+        
+        _columnView.frame = CGRectMake(-kCOLUMNWIDTH, 0, kCOLUMNWIDTH, kIMAGEHEIGHT + kTABLEHEIGHT);
+        
+        for (UIView *view in _columnView.subviews) {
+            if ([view isMemberOfClass:[UITableView class]]) {
+                ((UITableView *)view).dataSource = self;
+                ((UITableView *)view).delegate = self;
+            }
+        }
+    }
+    
+    return _columnView;
 }
 
 - (NSArray *)articles {
@@ -157,6 +209,13 @@
     }
     
     return _articles;
+}
+
+- (NSArray *)cateArray {
+    if (!_cateArray) {
+        _cateArray = [DataManager cateArray];
+    }
+    return _cateArray;
 }
 
 @end
