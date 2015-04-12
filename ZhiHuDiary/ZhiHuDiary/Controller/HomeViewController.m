@@ -10,6 +10,7 @@
 #import "DataManager.h"
 #import "Article.h"
 #import "HomeHeaderView.h"
+#import "HomeTableViewCell.h"
 
 @interface HomeViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UIScrollView *headerView;
@@ -60,14 +61,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *identifier = @"article";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeTableViewCell Identifier]];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [HomeTableViewCell cellFromNib];
     }
     
-    Article *article = self.articles[indexPath.section][indexPath.row];
-    cell.textLabel.text = article.name;
+    [cell updateDataWithArticle:self.articles[indexPath.section][indexPath.row]];
 
     return cell;
 }
@@ -143,6 +142,8 @@
         _articleTableView.frame = CGRectMake(0, kIMAGEHEIGHT, kIMAGEWIDTH, kTABLEHEIGHT);
         
         _articleTableView.sectionHeaderHeight = 30;
+        
+        _articleTableView.rowHeight = [HomeTableViewCell CellHeight];
         
     }
     

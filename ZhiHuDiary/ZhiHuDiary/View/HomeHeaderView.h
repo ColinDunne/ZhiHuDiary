@@ -14,4 +14,8 @@
 
 + (instancetype)headerViewWithTableView:(UITableView *)tableView;
 
++ (NSString *)Identifier;
+
++ (CGFloat)SectionHeight;
+
 @end

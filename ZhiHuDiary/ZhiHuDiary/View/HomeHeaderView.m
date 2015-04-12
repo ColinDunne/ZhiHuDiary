@@ -8,13 +8,14 @@
 
 #import "HomeHeaderView.h"
 
+#define kTABLEWIDTH 375
+
 @implementation HomeHeaderView
 
 +(instancetype)headerViewWithTableView:(UITableView *)tableView {
-    static NSString *identifier = @"header";
-    HomeHeaderView *header = [tableView dequeueReusableCellWithIdentifier:identifier];
+    HomeHeaderView *header = [tableView dequeueReusableCellWithIdentifier:[HomeHeaderView Identifier]];
     if (!header) {
-        header = [[HomeHeaderView alloc] initWithReuseIdentifier:identifier];
+        header = [[HomeHeaderView alloc] initWithReuseIdentifier:[HomeHeaderView Identifier]];
     }
     
     return header;
@@ -22,16 +23,24 @@
 
 - (instancetype)initWithReuseIdentifier:(NSString *)identifier {
     if (self = [super init]) {
-        self.frame = CGRectMake(0, 0, 375, 30);
+        self.frame = CGRectMake(0, 0, kTABLEWIDTH, [HomeHeaderView SectionHeight]);
         UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.frame = CGRectMake(0, 0, 375, 30);
+        titleLabel.frame = CGRectMake(0, 0, kTABLEWIDTH, [HomeHeaderView SectionHeight]);
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.backgroundColor = [UIColor blueColor];
+        titleLabel.backgroundColor = [UIColor colorWithRed:56.0/256 green:159.0/256 blue:219.0/256 alpha:1];
         
         [self addSubview:titleLabel];
     }
     
     return self;
+}
+
++ (NSString *)Identifier {
+    return @"header";
+}
+
++ (CGFloat)SectionHeight {
+    return 30;
 }
 
 - (void)setTitle:(NSString *)title {

@@ -19,6 +19,7 @@
 		D08F9AE81AD8F306002359B5 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D08F9AE71AD8F306002359B5 /* Article.m */; };
 		D0E96B4B1AD906D3007DC0B5 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E96B4A1AD906D3007DC0B5 /* DataManager.m */; };
 		D0E96B4E1AD94FCF007DC0B5 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E96B4D1AD94FCF007DC0B5 /* HomeHeaderView.m */; };
+		D0E96B511AD964EA007DC0B5 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E96B501AD964EA007DC0B5 /* HomeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		D0E96B4A1AD906D3007DC0B5 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Model/DataManager.m; sourceTree = "<group>"; };
 		D0E96B4C1AD94FCF007DC0B5 /* HomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeHeaderView.h; path = View/HomeHeaderView.h; sourceTree = "<group>"; };
 		D0E96B4D1AD94FCF007DC0B5 /* HomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeHeaderView.m; path = View/HomeHeaderView.m; sourceTree = "<group>"; };
+		D0E96B4F1AD964EA007DC0B5 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTableViewCell.h; path = View/HomeTableViewCell.h; sourceTree = "<group>"; };
+		D0E96B501AD964EA007DC0B5 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewCell.m; path = View/HomeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 			children = (
 				D0E96B4C1AD94FCF007DC0B5 /* HomeHeaderView.h */,
 				D0E96B4D1AD94FCF007DC0B5 /* HomeHeaderView.m */,
+				D0E96B4F1AD964EA007DC0B5 /* HomeTableViewCell.h */,
+				D0E96B501AD964EA007DC0B5 /* HomeTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				D0E96B4B1AD906D3007DC0B5 /* DataManager.m in Sources */,
 				D0E96B4E1AD94FCF007DC0B5 /* HomeHeaderView.m in Sources */,
 				D00F25FB1AD64FCD00E959BF /* AppDelegate.m in Sources */,
+				D0E96B511AD964EA007DC0B5 /* HomeTableViewCell.m in Sources */,
 				D00F25F81AD64FCD00E959BF /* main.m in Sources */,
 				D00F26201AD669B100E959BF /* HomeViewController.m in Sources */,
 			);
